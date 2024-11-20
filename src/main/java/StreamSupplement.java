@@ -8,15 +8,15 @@ public class StreamSupplement {
     }
 
     public List<Integer> sortFromMaxToMin(List<Integer> numbers) {
-        return null;
+        return numbers.stream().sorted(Comparator.reverseOrder()).toList();
     }
 
     public double getAverage(List<Integer> numbers) {
-        return 0;
+        return numbers.stream().mapToDouble(Integer::doubleValue).average().getAsDouble();
     }
 
     public int getMaxValue(List<Integer> numbers) {
-        return 0;
+        return numbers.stream().mapToInt(Integer::intValue).max().getAsInt();
     }
 
 }
